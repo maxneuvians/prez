@@ -1,31 +1,28 @@
-# Macros
-
-# Part of elixir meta progamming. Bad News: Hard to do properly.
-# Good news: Rarely need to do it as a beginner.
+# Pipe operator
 #
-# Example: If
-# Erlang does not have an if statement, it uses case clauses
-#
+# Instead of nesting functions you can pipe them like in *nix shells.
+# The passed argument becomes the first function.
 # ex:
-
-defmodule Test do
-  def thing(x) do
-    case x > 12 do
-      true -> IO.inspect "Greater than 12"
-      false -> IO.inspect "Less than or equal to 12"
-    end
-  end
-end
-
-IO.inspect Test.thing(12)
-
-# If can be expressed as a case: 
 #
-# if (condition) then: do_clause, else: else_clause
-#
-# could look like
-#
-# case condition do
-#   false -> else_clause
-#   _ -> do_clause
-# end
+
+"Hello World"
+|> IO.inspect
+|> String.split(" ")
+|> IO.inspect
+|> Enum.reverse
+|> IO.inspect
+|> Enum.join(" ")
+|> IO.inspect
+
+
+# Without the IO.inspect (which you do not need)
+
+"Hello World"
+|> String.split(" ")
+|> Enum.reverse
+|> Enum.join(" ")
+|> IO.inspect
+
+# Would look like this
+
+IO.inspect(Enum.join(Enum.reverse(String.split("Hello World", " ")), " "))
