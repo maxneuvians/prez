@@ -1,16 +1,10 @@
-# Functions
+# Pattern matching
 
-# Anonymous
-
-a = fn (a, b) -> a + b end
-b = a.(1,2)
-IO.inspect(b)
-
-# Named function
-defmodule Foo do
-  def bar(a, b) do
-    a + b
-  end
-end
-
-IO.inspect(Foo.bar(1,2))
+# Assigning vs. binding
+# In elixir you are assinging, not binding.
+# "You can think of binding as a label on a suitcase, and assignment as a suitcase."
+#
+x = 1
+f = fn -> x end
+x = 2
+IO.inspect(f.())
