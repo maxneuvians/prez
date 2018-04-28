@@ -1,11 +1,25 @@
 # Pattern matching
 
-# Magic
-[1, b, 3] = [1, 2, 3]
-IO.inspect(b)
+# Matching in function headers
 
-[_, b, 3] = [:crazy_stuff, 2, 3]
-IO.inspect(b)
+defmodule Beer do
 
-[_, b, 3] = [1, 2, 4]
+  def order(0), do: "Nothing coming up"
+  def order(x), do: "#{x} beers coming up"
 
+end
+
+IO.inspect(Beer.order(0))
+IO.inspect(Beer.order(6))
+
+# Guards
+
+defmodule Age do
+
+  def can_drink(x) when x > 18, do: true
+  def can_drink(_x), do: false
+
+end
+
+IO.inspect(Age.can_drink(19))
+IO.inspect(Age.can_drink(17))
