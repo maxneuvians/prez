@@ -1,5 +1,7 @@
-# Elixir is a dynamic and functional language that leverages the
-# Erlang VM. Erlang is usually used in distributed and fault
-# tolerant systems such as telecommunications and highly 
-# scaling web applications and systems such as WhatsApp, AdRoll,
-# Heroku and World of Warcraft.
+# Why is this important?
+#
+# Erlang/ Elixir allows you to maximize all your threads
+# by running concurrent threads. To note here is that this 
+# is not a a processor thread but a thread in the Erlang VM.
+# Erlang can run one or more schedulers that will divide your
+# work across multiple processors.
