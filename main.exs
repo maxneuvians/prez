@@ -1,20 +1,16 @@
-# Collection types
+# Functions
 
-# Tuples 
-a = {:hello, "world"}
-IO.inspect(a)
+# Anonymous
 
-# Linked Lists
-b = [1,2,3,4]
+a = fn (a, b) -> a + b end
+b = a.(1,2)
 IO.inspect(b)
 
-# Binaries
-c = <<70,71>>
-IO.inspect(c)
+# Named function
+defmodule Foo do
+  def bar(a, b) do
+    a + b
+  end
+end
 
-# Maps
-d = %{"hello" => "world"}
-IO.inspect(d["hello"])
-
-e = %{hello: :world}
-IO.inspect(e[:hello])
+IO.inspect(Foo.bar(1,2))
