@@ -1,27 +1,20 @@
-# Value types
+# Collection types
 
-# Integers
-a = 123
+# Tuples 
+a = {:hello, "world"}
 IO.inspect(a)
 
-# Floats
-b = 3.14
+# Linked Lists
+b = [1,2,3,4]
 IO.inspect(b)
 
-# Atoms
-c = :pi_atom
+# Binaries
+c = <<70,71>>
 IO.inspect(c)
 
-# Ranges
-d = 1..10
+# Maps
+d = %{"hello" => "world"}
+IO.inspect(d["hello"])
 
-Enum.map(d, fn n -> n end)
-|> IO.inspect
-
-# String
-e = "Hello"
-IO.inspect(e)
-
-# Char lists
-f = 'ABCD'
-IO.inspect(f)
+e = %{hello: :world}
+IO.inspect(e[:hello])
