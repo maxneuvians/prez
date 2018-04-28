@@ -1,7 +1,11 @@
-# Why is this important?
-#
-# Erlang/ Elixir allows you to maximize all your threads
-# by running concurrent threads. To note here is that this 
-# is not a a processor thread but a thread in the Erlang VM.
-# Erlang can run one or more schedulers that will divide your
-# work across multiple processors.
+ # People talk a lot about Elixir's functional and concurrent nature.
+ # What does that mean?
+ #
+ # Functional:
+ # There is no shared state between functions. What you are doing is 
+ # transforming data in a predictable way without side effects. Data is
+ # therefore immutable unless it is re-assigned.
+ #
+ # Concurrent:
+ # Short answer: Different things can happen at the same time. ex. Ruby
+ # webservers vs. Erlang webserver.
